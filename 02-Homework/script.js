@@ -6,6 +6,12 @@
 // Use moment.js for the date library
 
 
+$(document).ready(function(){
+// Store today's date and current hour in a variable to call on later
+var thisDay = moment().format("dddd, MMM DD YYYY");
+var rightNow = moment().format("HH");
 // This JS adds today's date to the top of the planner
-document.getElementById("currentDay").textContent=moment().format("dddd, MMM DD YYYY");
+document.getElementById("currentDay").textContent=thisDay;
 
+
+});

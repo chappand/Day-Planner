@@ -12,6 +12,29 @@ var rightNow = moment().format("HH");
 // This JS adds today's date to the top of the planner
 document.getElementById("currentDay").textContent=thisDay;
 
+// Add new Row with Content
+function rowContent() {
+
+    var taskRow = $("<row>").attr("class", "row");
+    var save = $("<button>SAVE</button>").attr("class", "saveBtn i:hover");
+    var taskHour = $("<div>").attr("class", "hour col-md-1");
+    var task = $("<textarea>").attr("class", "description col-md-9");
+    
+    
+    $("#planner").append(taskRow);
+    $(".row").append(taskHour);
+    $(".row").append(task);
+    $(".row").append(save);
+    
+    };
+    rowContent();
+
+function setUp() {
+    for (let i = 9; i < 17; i++) {
+        rowContent();
+    };
+};
+    
 // var array????? = list of work hours?
 
 // for(each hour){
@@ -27,20 +50,5 @@ document.getElementById("currentDay").textContent=thisDay;
 // on.click save information to localStorage;
 // retrieve information from localStorage;
 
-// Add new Row with Content
-function rowContent() {
-
-var taskRow = $("<row>").attr("class", "row");
-var save = $("<button>SAVE</button>").attr("class", "saveBtn i:hover");
-var taskHour = $("<div>").attr("class", "hour col-md-1");
-var task = $("<textarea>").attr("class", "description col-md-9");
-
-
-$("#planner").append(taskRow);
-$(".row").append(taskHour);
-$(".row").append(task);
-$(".row").append(save);
-
-};
-rowContent();
+setUp();
 });
